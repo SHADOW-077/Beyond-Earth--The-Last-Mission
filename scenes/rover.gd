@@ -4,9 +4,9 @@ extends CharacterBody2D
 @export var acceleration = 5
 var min_angle = 240
 var max_angle = 300
-var rotating_right: bool = true
+var rotating_right= true
 var movement = 0
-
+@onready var line_2d_pos = $RayCast2D/Line2D.get_point_position(1)
 @onready var ray = $RayCast2D
 func _physics_process(delta):
 	#rover movement
@@ -28,9 +28,12 @@ func _physics_process(delta):
 	#raycast
 	
 	var end_point_ray = ray.target_position
+	
 	if ray.is_colliding():
-		end_point_ray = $Line2D.distance_to(ray.get_collision_point())
-		$Line2D.set_point_position(1,end_point_ray)
+		end_point_ray = to_local(ray.get_collision_point())
+		$RayCast2D/Line2D.set_point_position(1,line_2d_pos-end_point_ray)
+	else:
+		$RayCast2D/Line2D.set_point_position(1,line_2d_pos)
 
 func _process(delta):
 	if rotating_right:
