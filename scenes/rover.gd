@@ -7,9 +7,9 @@ var movement = 0
 
 func _physics_process(delta):
 	#rover movement
-	velocity = Vector2.ZERO
 	if velocity==Vector2.ZERO:
 		movement = 0
+		velocity = Vector2.ZERO
 	velocity = Vector2.ZERO
 	var direction_x = Input.get_axis("move_left","move_right")
 	if direction_x !=0 && movement !=0:

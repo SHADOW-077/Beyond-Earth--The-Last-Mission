@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b8x7scwremutv"]
+[gd_scene load_steps=3 format=3 uid="uid://b8x7scwremutv"]
 
 [ext_resource type="PackedScene" uid="uid://8hh2ohbttpr1" path="res://scenes/rover.tscn" id="1_w32c2"]
+[ext_resource type="PackedScene" uid="uid://62ctxi7u7tn6" path="res://scenes/controls.tscn" id="2_0j2sc"]
 
 [node name="level_1" type="Node2D"]
 
@@ -13,3 +14,6 @@ color = Color(0.356267, 0.251115, 0.109136, 1)
 position = Vector2(600, 360)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CONTROLS" parent="CanvasLayer" instance=ExtResource("2_0j2sc")]
+position = Vector2(113, 491)
