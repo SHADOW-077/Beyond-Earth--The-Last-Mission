@@ -14,7 +14,7 @@ texture_normal = ExtResource("1_e82yc")
 action = "move_forward"
 
 [node name="dpad_down" type="TouchScreenButton" parent="."]
-position = Vector2(1010, 594)
+position = Vector2(997, 594)
 scale = Vector2(1.2, 1.2)
 texture_normal = ExtResource("2_q81bv")
 action = "move_backward"
