@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://8hh2ohbttpr1"]
+
+[ext_resource type="Texture2D" uid="uid://dpd4kxkdaaiwe" path="res://assets/sprites/ROVER.png" id="1_k1aeg"]
+[ext_resource type="Texture2D" uid="uid://rfy3qchs3aki" path="res://assets/sprites/ROVER_CAM.png" id="2_panyw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jps58"]
+size = Vector2(108, 79)
+
+[node name="rover" type="CharacterBody2D"]
+
+[node name="rover_sprite" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("1_k1aeg")
+
+[node name="cam_sprite" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("2_panyw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 0.5)
+shape = SubResource("RectangleShape2D_jps58")
