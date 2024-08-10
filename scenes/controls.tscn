@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://62ctxi7u7tn6"]
+
+[node name="CONTROLS" type="Node2D"]
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
