@@ -1,27 +1,30 @@
 [gd_scene load_steps=5 format=3 uid="uid://62ctxi7u7tn6"]
 
-[ext_resource type="Texture2D" uid="uid://dcs3ibwlt7n21" path="res://assets/ui/dpad_up.png" id="1_iq0dj"]
-[ext_resource type="Texture2D" uid="uid://bi4emv1u7rp34" path="res://assets/ui/dpad_down.png" id="2_lehxj"]
-[ext_resource type="Texture2D" uid="uid://3vw1bwubca0k" path="res://assets/ui/dpad_left.png" id="3_0mqp3"]
-[ext_resource type="Texture2D" uid="uid://dor6uxhvbwp6u" path="res://assets/ui/dpad_right.png" id="4_ye04m"]
+[ext_resource type="Texture2D" uid="uid://whr5p27kmsoo" path="res://assets/ui/accelerator.png" id="1_e82yc"]
+[ext_resource type="Texture2D" uid="uid://c4fqvj3tqjlbi" path="res://assets/ui/down.png" id="2_q81bv"]
+[ext_resource type="Texture2D" uid="uid://pwqifagoppiu" path="res://assets/ui/left.png" id="3_l3d31"]
+[ext_resource type="Texture2D" uid="uid://oxs5iabm4dk3" path="res://assets/ui/right.png" id="4_brkgp"]
 
 [node name="CONTROLS" type="Node2D"]
 
 [node name="dpad_up" type="TouchScreenButton" parent="."]
-texture_normal = ExtResource("1_iq0dj")
+position = Vector2(1115, 594)
+scale = Vector2(1.2, 1.2)
+texture_normal = ExtResource("1_e82yc")
 action = "move_forward"
 
 [node name="dpad_down" type="TouchScreenButton" parent="."]
-position = Vector2(0, 75)
-texture_normal = ExtResource("2_lehxj")
+position = Vector2(1010, 594)
+scale = Vector2(1.2, 1.2)
+texture_normal = ExtResource("2_q81bv")
 action = "move_backward"
 
 [node name="dpad_left" type="TouchScreenButton" parent="."]
-position = Vector2(-45, 45)
-texture_normal = ExtResource("3_0mqp3")
+position = Vector2(80, 601)
+texture_normal = ExtResource("3_l3d31")
 action = "move_left"
 
 [node name="dpad_right" type="TouchScreenButton" parent="."]
-position = Vector2(30, 45)
-texture_normal = ExtResource("4_ye04m")
+position = Vector2(183, 601)
+texture_normal = ExtResource("4_brkgp")
 action = "move_right"
