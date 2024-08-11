@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://utt2qkotq03e"]
+
+[ext_resource type="Texture2D" uid="uid://pg2rmlrujysk" path="res://assets/sprites/upload station.png" id="1_2by6m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lim1l"]
+size = Vector2(48, 32)
+
+[node name="upload_station" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3.79, 3.79)
+texture = ExtResource("1_2by6m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2.35, 2.35)
+shape = SubResource("RectangleShape2D_lim1l")

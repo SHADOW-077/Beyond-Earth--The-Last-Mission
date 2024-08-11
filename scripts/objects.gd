@@ -21,24 +21,21 @@ func collision():
 		match selected_object_type:
 			object_types.ROCK:
 				emit_signal("object_collected",object_types.ROCK)
-				pass
 				queue_free()
 			object_types.SCRAP:
 				emit_signal("object_collected",object_types.SCRAP)
-				pass
 				queue_free()
 			object_types.FOSSIL:
 				emit_signal("object_collected",object_types.FOSSIL)
-				pass
 				queue_free()
 			object_types.CRYSTAL:
 				emit_signal("object_collected",object_types.CRYSTAL)
-				pass
 				queue_free()
 			object_types.BIOLOGICAL_SAMPLES:
 				emit_signal("object_collected",object_types.BIOLOGICAL_SAMPLES)
-				pass
 				queue_free()
+		$AudioStreamPlayer2D.play()
+		await get_tree().create_timer(3).timeout
 		colliding = true
 		await get_tree().create_timer(2.5).timeout
 		colliding = false
