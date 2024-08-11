@@ -1,0 +1,1 @@
+class_name Objects extends StaticBody2D

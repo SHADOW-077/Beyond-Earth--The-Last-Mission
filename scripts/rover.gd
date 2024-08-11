@@ -6,7 +6,8 @@ var min_angle = -30
 var max_angle = 30
 var rotating_right= true
 var movement = 0
-@onready var ray = $rover_sprite/cam_sprite
+@onready var cam = $rover_sprite/cam_sprite
+@onready var ray = $RayCast2D
 var key_pressed = 0
 func _physics_process(delta):
 	#rover movement
@@ -27,17 +28,22 @@ func _physics_process(delta):
 		movement+= acceleration
 		velocity = lerp(velocity,Vector2(min(movement, rover_speed),0).rotated(rotation),0.5)
 	move_and_slide()
+	
 
 func _process(delta):
 	#raycast rotation
 	if rotating_right:
+		cam.rotation += .75* delta
 		ray.rotation += .75* delta
-		if ray.rotation >= deg_to_rad(max_angle):
+		if cam.rotation >= deg_to_rad(max_angle):
+			cam.rotation = deg_to_rad(max_angle)
 			ray.rotation = deg_to_rad(max_angle)
 			rotating_right = false
 	else:
+		cam.rotation -= .75 * delta
 		ray.rotation -= .75 * delta
-		if ray.rotation <= deg_to_rad(min_angle):
+		if cam.rotation <= deg_to_rad(min_angle):
+			cam.rotation = deg_to_rad(min_angle)
 			ray.rotation = deg_to_rad(min_angle)
 			rotating_right = true
 

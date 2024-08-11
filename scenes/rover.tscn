@@ -1,13 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://8hh2ohbttpr1"]
+[gd_scene load_steps=6 format=3 uid="uid://8hh2ohbttpr1"]
 
-[ext_resource type="Script" path="res://scenes/rover.gd" id="1_jx2ge"]
+[ext_resource type="Script" path="res://scripts/rover.gd" id="1_jx2ge"]
 [ext_resource type="Texture2D" uid="uid://dpd4kxkdaaiwe" path="res://assets/sprites/ROVER.png" id="1_k1aeg"]
 [ext_resource type="Texture2D" uid="uid://rfy3qchs3aki" path="res://assets/sprites/ROVER_CAM.png" id="2_panyw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jps58"]
 size = Vector2(106, 79)
 
-[node name="rover" type="CharacterBody2D"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_g7x6j"]
+b = Vector2(106, 0)
+
+[node name="rover" type="CharacterBody2D" groups=["rover"]]
 motion_mode = 1
 script = ExtResource("1_jx2ge")
 
@@ -20,16 +23,10 @@ position = Vector2(9.33333, 0)
 texture = ExtResource("2_panyw")
 offset = Vector2(-9.33333, 0)
 
-[node name="RayCast2D" type="RayCast2D" parent="rover_sprite/cam_sprite"]
-position = Vector2(4.33333, -3.78956e-14)
-rotation = -1.5708
+[node name="Line2D" type="Line2D" parent="rover_sprite/cam_sprite"]
+position = Vector2(5, -2.42127e-06)
 scale = Vector2(0.333333, 0.333333)
-target_position = Vector2(0, 95)
-
-[node name="Line2D" type="Line2D" parent="rover_sprite/cam_sprite/RayCast2D"]
-position = Vector2(2.38497e-08, 2)
-rotation = 1.5708
-points = PackedVector2Array(0, 0, 90, 0)
+points = PackedVector2Array(0, 0, 80.1731, 0, 90, 0)
 width = 5.0
 default_color = Color(1, 0.0823529, 0, 0.439216)
 joint_mode = 2
@@ -41,3 +38,7 @@ position = Vector2(4, 0.5)
 shape = SubResource("RectangleShape2D_jps58")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="RayCast2D" type="CollisionShape2D" parent="."]
+position = Vector2(28, 0)
+shape = SubResource("SegmentShape2D_g7x6j")
