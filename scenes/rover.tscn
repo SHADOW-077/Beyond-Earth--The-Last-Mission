@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://rfy3qchs3aki" path="res://assets/sprites/ROVER_CAM.png" id="2_panyw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jps58"]
-size = Vector2(108, 79)
+size = Vector2(106, 79)
 
 [node name="rover" type="CharacterBody2D"]
 motion_mode = 1
@@ -16,25 +16,28 @@ scale = Vector2(3, 3)
 texture = ExtResource("1_k1aeg")
 
 [node name="cam_sprite" type="Sprite2D" parent="rover_sprite"]
+position = Vector2(9.33333, 0)
 texture = ExtResource("2_panyw")
+offset = Vector2(-9.33333, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3, 0.5)
-shape = SubResource("RectangleShape2D_jps58")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2(40, 0)
-rotation = 4.18879
+[node name="RayCast2D" type="RayCast2D" parent="rover_sprite/cam_sprite"]
+position = Vector2(4.33333, -3.78956e-14)
+rotation = -1.5708
+scale = Vector2(0.333333, 0.333333)
 target_position = Vector2(0, 95)
 
-[node name="Line2D" type="Line2D" parent="RayCast2D"]
+[node name="Line2D" type="Line2D" parent="rover_sprite/cam_sprite/RayCast2D"]
 position = Vector2(2.38497e-08, 2)
 rotation = 1.5708
 points = PackedVector2Array(0, 0, 90, 0)
-width = 4.0
+width = 5.0
 default_color = Color(1, 0.0823529, 0, 0.439216)
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 0.5)
+shape = SubResource("RectangleShape2D_jps58")
+
+[node name="Camera2D" type="Camera2D" parent="."]
