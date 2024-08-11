@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var dialog_box = $"CanvasLayer/dialog box"
 var last_collected_sample 
-var no_samples = 5
+var no_samples = 0
 func _ready():
 	pass
 	

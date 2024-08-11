@@ -57,6 +57,7 @@ text = "INSTRUCTION:
 "
 
 [node name="Label3" type="Label" parent="."]
+layout_mode = 0
 offset_left = 705.0
 offset_top = 184.0
 offset_right = 1602.0
