@@ -4,9 +4,10 @@
 [ext_resource type="Script" path="res://scripts/objects.gd" id="1_fhlt7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3avcn"]
-size = Vector2(128, 125)
+size = Vector2(172.152, 91.1393)
 
 [node name="objects" type="Area2D" groups=["obejcts"]]
+collision_layer = 2
 script = ExtResource("1_fhlt7")
 selected_object_type = 3
 

@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxu770ftf4gxt"]
+
+[ext_resource type="Script" path="res://scripts/dialog_box.gd" id="1_anhyj"]
+[ext_resource type="FontFile" uid="uid://neqrt7yvyn58" path="res://assets/fonts/Kenney Rocket.ttf" id="1_ntnec"]
+
+[node name="dialog box" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_anhyj")
+
+[node name="QUEST" type="Label" parent="."]
+layout_mode = 0
+offset_left = 865.0
+offset_top = 7.0
+offset_right = 1318.0
+offset_bottom = 80.0
+scale = Vector2(0.785, 0.785)
+theme_override_colors/font_color = Color(0, 0.97, 0.8245, 1)
+theme_override_fonts/font = ExtResource("1_ntnec")
+theme_override_font_sizes/font_size = 28
+text = "QUESTS:
+COLLECT 5 SAMPLES 
+STATUS:
+0 SAMPLES COLLECTED"

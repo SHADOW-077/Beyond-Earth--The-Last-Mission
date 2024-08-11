@@ -20,15 +20,25 @@ func collision():
 	if !array.is_empty() && Input.is_action_just_pressed('pick'):
 		match selected_object_type:
 			object_types.ROCK:
-				print('rock')
+				emit_signal("object_collected",object_types.ROCK)
+				pass
+				queue_free()
 			object_types.SCRAP:
-				print("scrap")
+				emit_signal("object_collected",object_types.SCRAP)
+				pass
+				queue_free()
 			object_types.FOSSIL:
-				print("fossil")
+				emit_signal("object_collected",object_types.FOSSIL)
+				pass
+				queue_free()
 			object_types.CRYSTAL:
-				print("crystal")
+				emit_signal("object_collected",object_types.CRYSTAL)
+				pass
+				queue_free()
 			object_types.BIOLOGICAL_SAMPLES:
-				print("samples")
+				emit_signal("object_collected",object_types.BIOLOGICAL_SAMPLES)
+				pass
+				queue_free()
 		colliding = true
 		await get_tree().create_timer(2.5).timeout
 		colliding = false
