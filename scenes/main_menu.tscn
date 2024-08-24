@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ckwhi1areyisr"]
 
-[ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_aj6ov"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_aj6ov"]
 [ext_resource type="FontFile" uid="uid://neqrt7yvyn58" path="res://assets/fonts/Kenney Rocket.ttf" id="1_oh80d"]
 
 [node name="MAIN MENU" type="Control"]

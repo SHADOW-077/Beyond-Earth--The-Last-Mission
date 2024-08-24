@@ -34,7 +34,6 @@ func collision():
 			object_types.BIOLOGICAL_SAMPLES:
 				emit_signal("object_collected",object_types.BIOLOGICAL_SAMPLES)
 				queue_free()
-		$AudioStreamPlayer2D.play()
 		await get_tree().create_timer(3).timeout
 		colliding = true
 		await get_tree().create_timer(2.5).timeout

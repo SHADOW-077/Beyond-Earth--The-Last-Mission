@@ -14,7 +14,6 @@ func _physics_process(delta):
 	if velocity==Vector2.ZERO:
 		movement = 0
 		key_pressed = 0
-		$AudioStreamPlayer2D.stop()
 		velocity = Vector2.ZERO
 	velocity = Vector2.ZERO
 	var direction_x = Input.get_axis("move_left","move_right")
@@ -24,12 +23,10 @@ func _physics_process(delta):
 		key_pressed = -1
 		movement-= acceleration
 		velocity = Vector2(max(movement, -rover_speed/1.6),0).rotated(rotation)
-		$AudioStreamPlayer2D.play()
 	elif Input.is_action_pressed("move_forward") && key_pressed !=-1:
 		key_pressed = 1
 		movement+= acceleration
 		velocity = Vector2(min(movement, rover_speed),0).rotated(rotation)
-		$AudioStreamPlayer2D.play()
 	move_and_slide()
 	
 	if ray.is_colliding():
@@ -58,4 +55,3 @@ func _process(delta):
 			ray.rotation = deg_to_rad(240)
 			$CollisionShape2D2.rotation = deg_to_rad(min_angle)
 			rotating_right = true
-
